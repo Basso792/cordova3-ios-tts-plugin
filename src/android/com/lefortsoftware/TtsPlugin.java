@@ -71,6 +71,12 @@
         return true;
         }
 
+         if(action.equals("isSpeaking")){
+         String res = tts.isSpeaking() ? "true" : "false";
+         //Toast.makeText(cordova.getActivity().getApplicationContext(), res, Toast.LENGTH_LONG).show();
+         callbackContext.sendPluginResult(new PluginResult(status, res));
+         }
+
         callbackContext.success(action);
         return true;
         }

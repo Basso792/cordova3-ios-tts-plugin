@@ -2,6 +2,7 @@
 
         import org.apache.cordova.CallbackContext;
         import org.apache.cordova.CordovaPlugin;
+        import org.apache.cordova.PluginResult;
         import org.json.JSONArray;
         import org.json.JSONException;
 
@@ -17,7 +18,7 @@
 
         @Override
         public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-
+        PluginResult.Status status = PluginResult.Status.OK;
         cbc = callbackContext;
 
         if(action.equals("echo")){

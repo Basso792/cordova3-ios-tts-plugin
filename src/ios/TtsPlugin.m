@@ -50,16 +50,17 @@ double rate = .2;
 }
 
 
-- (NSString)isSpeaking:(CDVInvokedUrlCommand*)command{
-    NSString* res = @"";
-    BOOL bool = [synth speaking];
-    if(bool){
+- (void)isSpeaking:(CDVInvokedUrlCommand*)command{
+    NSString *res = @" ";
+    //BOOL b = false[synth.isSpeaking];
+    if(synth.isSpeaking){
     res= @"true";
     }
-    if(!bool){
+    if(!synth.isSpeaking){
     res=@"false";
     }
-    return res;
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:res];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 @end

@@ -8,6 +8,6 @@
 - (void)setLanguage:(CDVInvokedUrlCommand*)command;
 - (void)speak:(CDVInvokedUrlCommand*)command;
 - (void)stop:(CDVInvokedUrlCommand*)command;
-- (NSString)isSpeaking:(CDVInvokedUrlCommand*)command;
+- (void)isSpeaking:(CDVInvokedUrlCommand*)command;
 
 @end

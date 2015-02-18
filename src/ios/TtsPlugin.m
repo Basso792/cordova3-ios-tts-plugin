@@ -50,4 +50,16 @@ double rate = .2;
 }
 
 
+- (NSString)isSpeaking:(CDVInvokedUrlCommand*)command{
+    NSString* res = @"";
+    BOOL bool = [synth speaking];
+    if(bool){
+    res= @"true";
+    }
+    if(!bool){
+    res=@"false";
+    }
+    return res;
+}
+
 @end
